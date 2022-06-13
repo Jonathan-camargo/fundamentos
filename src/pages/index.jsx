@@ -4,6 +4,7 @@ export default function Inicio() {
     return (
         <div style={{
             display: 'flex',
+            //flexDirection: 'row-reverse',
             justifyContent: 'center',
             alignItems: 'center',
             flexWrap: 'wrap',
