@@ -1,5 +1,7 @@
 .navegador{
-    padding: 30px;
+    padding: 50px;
     margin: 10px;
     border-radius: 8px;
+    cursor: pointer;
+    font-size: 2rem;
 }
