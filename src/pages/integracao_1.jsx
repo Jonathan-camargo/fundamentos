@@ -4,17 +4,23 @@ import Layout from '../components/layout'
 export default function Integracao() {
 
     const [cliente, setCliente] = useState({})
+    const [codigo, setCodigo] = useState({})
 
-    function obterCliente() {
-        fetch('http://localhost:8000/api/clientes/123')
-            .then(resp => resp.json())
-            .then(dados => setCliente(dados))
+    async function obterCliente() {
+        const resp = await fetch(`http://localhost:8000/api/clientes/${codigo}`)
+        const dados = await resp.json()
+        setCliente(dados)
+        
+        //  fetch(`http://localhost:8000/api/clientes/${codigo}`)
+        //       .then(resp => resp.json())
+        //      .then(dados => setCliente(dados))
     }
 
     return (
         <Layout>
             <div>
-                <input type="number" />
+                <input type="number" value={codigo}
+                    onChange={e => setCodigo(e.target.value)} />
                 <button onClick={obterCliente}>Obter Cliente</button>
             </div>
             <ul>
